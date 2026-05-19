@@ -6,11 +6,13 @@
 int main()
 {
 	
-	
-		std::cout << "Hello World!!!!!!\n";
+	int a = 10;
+	int* p = new int(20);
 
-	
-   
+	std::cout << &a << std::endl;
+	std::cout << p << std::endl;
+
+
 
 }
 
