@@ -3,14 +3,26 @@
 
 #include <iostream>
 
-int main()
+int*foo()
 {
-	
 	int a = 10;
-	int* p = new int(20);
+	return &a;
+}
 
-	std::cout << &a << std::endl;
+
+int main()
+{/*
+	char b = 0;
+	char c = 0;
+	int a = 10;*/
+	int* p = foo();
+
+	/*std::cout << &a << std::endl;
+	std::cout << (int*)&b << std::endl;
+	std::cout << (int*)&c << std::endl;*/
+
 	std::cout << p << std::endl;
+	std::cout << &p << std::endl;
 
 
 
