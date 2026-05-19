@@ -6,16 +6,31 @@
 int*foo()
 {
 	int a = 10;
-	return &a;
+	return new int(10);
+}
+
+void foo2(int *p)
+{
+	int b = 10;
+	std::cout << &b << std::endl;
+	std::cout << b << std::endl;
+
+	*p = 20;
+
+	std::cout << b << std::endl;
+
 }
 
 
+
 int main()
-{/*
-	char b = 0;
+{
+  
+	/*char b = 0;
 	char c = 0;
 	int a = 10;*/
 	int* p = foo();
+	foo2(p);
 
 	/*std::cout << &a << std::endl;
 	std::cout << (int*)&b << std::endl;
@@ -24,8 +39,7 @@ int main()
 	std::cout << p << std::endl;
 	std::cout << &p << std::endl;
 
-
-
+	delete p;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
