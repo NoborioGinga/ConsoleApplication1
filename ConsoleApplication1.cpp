@@ -3,9 +3,48 @@
 
 #include <iostream>
 
+
+
+
+
+class Sample
+{
+public:
+	std::shared_ptr<int>value;
+	Sample() :
+		value(std::make_shared<int>(20))
+	{
+
+	}
+};
+
+//void shared()
+//{
+//	auto sample = std::make_unique<Sample>();
+//	auto
+//}
+
+void weak()
+{
+	auto shared(std::make_shared<int>(30));
+	std::weak_ptr<int> weak(shared);
+
+	std::shared_ptr<int> w=weak.lock();
+	std::cout << *w << std::endl;
+
+	shared.reset();
+	w.reset();
+	std::cout << *w << std::endl;
+}
+
+
 int main()
 {
-    std::cout << "Hello World!\n";
+   
+	//shared();
+	weak();
+
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
